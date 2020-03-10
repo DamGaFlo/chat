@@ -111,7 +111,7 @@ while True:
 	print (addr[0] + " " + nick + " conectado")
 		
 	# Creamos un proceso individual para el cliente que se conecta
-	t = threading.Thread(target = clientthread)
+	t = threading.Thread(target = clientthread,args=(conn,addr,))
 	t.daemon = True
 	t.start()
 conn.close()
